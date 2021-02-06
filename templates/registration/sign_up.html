@@ -1,0 +1,65 @@
+{% load crispy_forms_tags %}
+{% load static %}
+{% load widget_tweaks %}
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            {{form|crispy}} 
+        </div>    
+           
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/signup.css' %}">
+
+       <!-- google fonts -->
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+       <video src="{% static 'books.mp4' %}" muted loop autoplay></video>
+       <div id="form-container">
+       <h1 class="signup">SIGN UP</h1>
+       <form method="POST">
+           {% csrf_token %}
+       	<label class="entry">Enter Email Id :</label><br>
+           <!--<input class="boxes" type="Email" name="email" placeholder="Enter College Email Id"><br>-->
+           {{ form.email|add_class:"boxes" }}<br>
+           {{ form.errors.email|add_error_class:"error"}}
+       	<label class="entry">Create Password :</label><br>
+           <!--<input class="boxes main" type="Password" name="passcode" placeholder="Enter Password"><br>-->
+           {{ form.password1|add_class:"boxes main"}}
+           {{ form.errors.password1|add_error_class:"error"}}
+       	<div class="instruct invisible">
+       	<h3>Your password must have following details:</h3>
+       	<ul id="conditions">
+       		<li>Password can't be similar to your other personal information</li>
+       		<li>Your password must have at least 8 characters</li>
+       		<li>Your password can include numbers, letters and symbols</li>
+       		<li>Your password can't be entirely numeric</li>
+       	</ul>
+       	</div>
+       	<label class="entry">Confirm Password :</label><br>
+           <!--<input class="boxes" type="Password" name="pass" placeholder="Confirm Password"><br>-->
+           {{form.password2|add_class:"boxes"}}
+           {{ form.errors.password2|add_error_class:"error"}}
+       	<button type="submit" class="submit">SIGN UP</a></button>
+       </form>
+       </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="{% static 'javascript/signup.js' %}" type="text/javascript"></script>
+</html>

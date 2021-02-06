@@ -1,0 +1,89 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  {% if form.errors %}
+  <p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+  {% if user.is_authenticated %}
+    <p>Your account doesn't have access to this page. To proceed,
+    please login with an account that has access.</p>
+  {% else %}
+    <p>Please login to see this page.</p>
+  {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>{{ form.username.label_tag }}</td>
+      <td>{{ form.username }}</td>
+    </tr>
+    <tr>
+      <td>{{ form.password.label_tag }}</td>
+      <td>{{ form.password }}</td>
+    </tr>
+  </table>
+  <input type="submit" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+</body>
+</html>-->
+
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Log In</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+       <!-- google fonts -->
+       <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+       <video src="{% static 'books.mp4' %}" muted loop autoplay></video>     
+       {% if next %}
+          {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+            please login with an account that has access.</p>
+          {% else %}
+            <p>Please login to see this page.</p>
+          {% endif %}
+        {% endif %}
+       <div id="form-container">
+       <h1 class="signin">LOG IN</h1>
+       <form method="post" action="{% url 'login' %}">
+         {% csrf_token %}
+       	<label class="entry">Enter Email Id :</label><br>
+        <!--<input class="boxes" type="Email" name="email" placeholder="Enter College Email Id">-->
+        {{ form.username|add_class:"boxes" }} <br>
+       	
+       	<label class="entry">Enter Password :</label><br>
+         <!--<input class="boxes" type="Password" name="pass" placeholder="Enter Password">-->
+         {{ form.password|add_class:"boxes"}}<br>
+         <a class="forgot" href="{% url 'password_reset' %}">Forgot password?</a>
+         <button type="submit" class="submit" value="login">LOG IN</button>
+         <input type="hidden" name="next" value="{{ next }}" />
+       </form>
+       {% if form.errors %}
+       <p>Your username and password didn't match. Please try again.</p>
+       {% endif %}
+       </div>
+
+ <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="#" type="text/javascript"></script>
+</body>
+</html>
