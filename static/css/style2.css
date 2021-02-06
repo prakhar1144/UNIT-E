@@ -1,0 +1,14 @@
+body{
+	text-align: center;
+	margin: 50% auto;
+	background-color: #ffffe6;
+	font-family: 'Work Sans', sans-serif;
+	/*font-size: 1rem;*/
+}
+
+.btn{
+	height: 2rem;
+	width: 8rem;
+	background-color: yellow;
+	border-radius: 30px;
+}
