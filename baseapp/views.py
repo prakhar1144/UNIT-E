@@ -1,6 +1,6 @@
 from django.shortcuts import render
 import requests
-from .models import Mess,Event
+from .models import Mess,Event, Routine
 from django.utils import timezone
 import requests
 from bs4 import BeautifulSoup 
@@ -35,6 +35,11 @@ def mess(request, email):
     roll_first_two = int(email[0:2])
     mess_data = Mess.objects.get(roll_starts_with=roll_first_two)
     return render(request, 'baseapp/mess.html', {'mess_data':mess_data})
+
+def routine(request, email):
+    roll_first_three = int(email[0:3])
+    routine_data = Routine.objects.get(roll_starts_with=roll_first_three)
+    return render(request, 'baseapp/routine.html', {'routine_data':routine_data})
 
 def newsfeed(request):
     posts = Event.objects.filter()[::-1]

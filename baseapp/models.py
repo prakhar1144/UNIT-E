@@ -21,3 +21,10 @@ class Event(models.Model):
     def __str__(self):
         return self.title
     
+class Routine(models.Model):
+    roll_starts_with = models.PositiveIntegerField()
+    branch_name = models.CharField(max_length=50)
+    menu_img = models.ImageField()
+
+    def __str__(self):
+        return self.branch_name

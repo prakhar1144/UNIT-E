@@ -45,6 +45,9 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'logout' %}">LOG OUT <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">HOME</a>
+      </li>
       {% endif %}
       {% if not user.is_authenticated %}
       <li class="nav-item active">
@@ -61,13 +64,13 @@
       {% endif %}
        <!--<li class="nav-item">
         <a class="nav-link" href="#">ATTENDANCE</a>
-      </li>-->
+      </li>
        <li class="nav-item">
         <a class="nav-link" href="{% url 'notice' %}">NOTICE</a>
-      </li>
+      </li>-->
       {% if user.is_authenticated %}
        <li class="nav-item">
-        <a class="nav-link" href="#">DOC VAULT</a>
+        <a class="nav-link" href="{% url 'routine' user.email %}">ROUTINE</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="{% url 'result' user.email %}">RESULT</a>
@@ -117,7 +120,7 @@
  <i class="fas fa-check-circle fa-8x"></i>
   <div class="card-body">
     
-   <button class="submit"><a href="#">ATTENDANCE</a></button>
+   <button class="submit"><a href="{% url 'routine' user.email %}">ROUTINE</a></button>
   </div>
 </div>
 	</div>

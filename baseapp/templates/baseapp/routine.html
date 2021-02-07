@@ -1,0 +1,16 @@
+{% extends 'baseapp/mainpg.html' %}
+{% load static %}
+{% block content %}
+
+<section class="features">
+<div class="row">
+	<div class="f-list col-lg-12 col-md-12 col-sm-12">
+		<div class="card">
+            <img class="routine-img" src="{{routine_data.menu_img.url}}" alt="news">
+            <div class="card-body">
+                <p class="routine-text">{{routine_data.branch_name}}</p>
+            </div>
+        </div>
+	</div>
+</section>
+{% endblock %}
