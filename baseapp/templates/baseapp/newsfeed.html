@@ -1,0 +1,27 @@
+{% extends 'baseapp/mainpg.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="username"><i class="fas fa-user-graduate fa-2x"></i><span class="name">Hi {{user|truncatechars:7}}</span></div>
+{% endif %}
+{% if not user.is_authenticated %}
+<div class="username"><i class="fas fa-user-graduate fa-2x"></i><span class="name">Hi USER </span></div>
+{% endif %}
+<div class="welcome">GET ALL THE LATEST COLLEGE NEWS HERE </div>
+
+<section class="features">
+    {% for post in posts %}
+    <div class="row">
+        <div class="f-list col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <img class="news-img" src="{{post.event_img.url}}" alt="news">
+                <div class="card-body">
+                <p class="news-text">{{post.title}}</p>
+                <p>{{post.description}}</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    {% endfor %}
+</section>
+{% endblock %}

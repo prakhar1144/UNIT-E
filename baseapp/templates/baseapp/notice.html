@@ -1,0 +1,15 @@
+{% extends 'baseapp/mainpg.html' %}
+{% load static %}
+{% block content %}
+
+<div class="welcome">GET ALL THE LATEST NOTICES HERE IN SYNC WITH COLLEGE</div>
+<section class="notice">
+    
+    {% for link in LINKS %}
+   <ul>
+     <li><a href="{{link.1}}">{{link.0}}</a></li>
+   </ul>
+   {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,154 @@
+body{
+	font-family: 'Work Sans', sans-serif;
+	margin:0;
+	box-sizing: border-box;
+	margin-right: -1.2rem;
+	position: sticky;
+	background-color: #333333;
+
+}
+
+.back-img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	z-index: -5;
+	opacity:0.5;
+}
+
+.navbar-brand{
+   font-weight: bold;
+   color: yellow;
+   font-size: 5rem;
+   
+}
+
+/*.................................................................................*/
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        line-height: 3;
+        padding-top: 16rem;
+        width: 65%;
+        height: 100%;
+        font-size: 2.5rem;
+        background-color: #130d06;
+        text-align: center;
+    }
+
+    .navbar-collapse.collapsing {
+        left: -75%;
+        transition: height 0s ease;
+    }
+
+    .navbar-collapse.show {
+        left: 0;
+        transition: left 300ms ease-in-out;
+    }
+
+    .navbar-toggler.collapsed ~ .navbar-collapse {
+        transition: left 500ms ease-in-out;
+    }
+
+
+/*...........................................................................................*/
+
+.nav-link, .navbar-toggler{
+	color:yellow;
+}
+.navbar-toggler{
+	font-size: 4rem;
+}
+
+.navbar-toggler:hover, .nav-link:hover, .navbar-brand:hover{
+   color: #ff9900;
+}
+
+.username{
+	color: #ffffcc;
+	font-size: 2.2rem;
+	opacity: 1;
+	position: relative;
+	z-index: 1;
+	padding: 3rem;
+}
+
+.username i {
+	margin-right: 2.5rem;
+	margin-top: 1rem;
+}
+
+.username .name{
+	font-size: 2.7rem;
+}
+
+.welcome{
+	position: relative;
+    font-size: 2rem;
+    margin: 1rem 3rem;
+    text-align: center;
+    padding: 3.5rem;
+    background-color: white;
+    border-radius: 35px;
+    box-shadow: 0 0 40px #ffc;
+    background-color: #ffffb3;
+    font-weight: bold;
+}
+
+.features{
+    margin: 7rem 2rem 5rem;
+}
+
+.card{
+	border-radius: 35px;
+}
+
+.card .news-img{
+	padding: 1.2rem;
+}
+
+.card-body{
+	text-align: center;
+	font-size: 2rem;
+}
+
+.row1 .card{
+	width: 85%;
+	margin-top: 4rem;
+}
+
+#footer{
+	text-align: center;
+	padding-top: 5rem;
+	padding-bottom: 3rem;
+	background-color: #1a1a00;
+	position:relative;
+    top:4.5rem;
+    font-size: 2rem;
+    width: 100%;
+}
+#footer .fab{
+	padding-top: 2.3rem;
+	padding-bottom: 3rem;
+	margin: auto;
+	padding-right: 2rem;
+	color: yellow;
+	transition: 0.4s;
+
+}
+
+#footer .fab:hover{
+transform: translateY(-8px);
+}
+
+#footer p{
+	font-size: 1.9rem;
+	color:white;
+
+}

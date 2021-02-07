@@ -1,0 +1,120 @@
+{% extends 'baseapp/mainpg.html' %}
+{% load static %}
+{% block content %}
+
+<div class="username"><i class="fas fa-user-graduate fa-2x"></i><span class="name">Hi {{user|truncatechars:7}}</span></div>
+
+<div class="welcome">REMEMBER, YOUR MARKS AIN'T DEFINE YOU ;)</div>
+
+<section class="results">
+    {% for semester, subjects in data.items %} 
+        <p class="sem-name">SEMESTER {{semester}}</p>
+        <table id="table1">
+        <tr>
+            <th>Sr No.</th>
+            <th>SUBJECT</th>
+            <th>SUBJECT CODE</th>
+            <th>SUB POINT</th>
+            <th>GRADE</th>
+            <th>SUB GP</th>
+          </tr>
+        {% for subject in subjects %}
+            {% if not forloop.last %}
+              <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{subject.3}}</td>
+                <td>{{subject.4}}</td>
+                <td>{{subject.2}}</td>
+                <td>{{subject.0}}</td>
+                <td>{{subject.1}}</td>
+            </tr>
+            {% endif %}
+            {% if forloop.last %}
+              <table id="table2">
+                <tr>
+                  <th>SGPI</th>
+                  <th>SGPI Total</th>
+                  <th>CGPI</th>
+                  <th>CGPI Total</th>
+                </tr>
+                <tr>
+                  <td>{{subject.sgpi}}</td>
+                  <td>{{subject.sgpi_total}}</td>
+                  <td>{{subject.cgpi}}</td>
+                  <td>{{subject.cgpi_total}}</td>
+                </tr>
+              </table>
+            {% endif %}
+            
+        {% endfor %}
+        </table>
+
+ <!--<tr>
+   <td>2</td>
+   <td>Engg Phy Lab</td>
+   <td>PH-102</td>
+   <td>1</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>3</td>
+   <td>Elec Lab</td>
+   <td>EE-102</td>
+   <td>1</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>4</td>
+   <td>Engg Draw</td>
+   <td>ED-102</td>
+   <td>4</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>5</td>
+   <td>Commune Skills</td>
+   <td>HS-101</td>
+   <td>3</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>6</td>
+   <td>Engg Chemistry</td>
+   <td>CY-102</td>
+   <td>3</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>7</td>
+   <td>Engg Physics</td>
+   <td>PH-101</td>
+   <td>4</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>8</td>
+   <td>Basic Electrical</td>
+   <td>EE-101</td>
+   <td>3</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>
+ <tr>
+   <td>9</td>
+   <td>Engg Maths</td>
+   <td>MA-102</td>
+   <td>4</td>
+   <td>A</td>
+   <td>10</td>
+ </tr>-->
+
+{% endfor %}
+<br>
+</section>
+{% endblock %}

@@ -1,0 +1,16 @@
+.features{
+    margin: 7rem 2rem 5rem;
+}
+
+.card{
+  border-radius: 35px;
+}
+
+.card .routine-img{
+  padding: 1.2rem;
+}
+
+.card-body{
+  text-align: center;
+  font-size: 2rem;
+}
