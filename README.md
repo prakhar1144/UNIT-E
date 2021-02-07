@@ -2,4 +2,4 @@
 
 ## TEAM DELTA
 
-(![LOGO](https://github.com/prakhar1144/Acad-Mate/blob/master/Acadmate%20homepaage.png))
+![LOGO](https://github.com/prakhar1144/UNIT-E/blob/main/static/images/icon-152x152.png)
